@@ -17,7 +17,6 @@
         var itemsArr = cleanItems.split(',');
         message = itemsArr.length > 3 ? "Too much!" : "Enjoy!";
       }
-
       $scope.message = message;
     }
 
