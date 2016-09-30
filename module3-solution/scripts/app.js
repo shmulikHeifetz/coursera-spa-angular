@@ -9,6 +9,7 @@
   NarrowItDownController.$inject = ['MenuSearchService']
   function NarrowItDownController(MenuSearchService) {
     var vm = this;
+    vm.error = "";
     vm.searchTerm = "";
     vm.found = [];
     vm.narrowDownTo = function () {
@@ -16,10 +17,13 @@
 
       promise.then(function (response) {
         vm.found = response;
+        vm.error = (vm.found.length == 0 ? "Nothing found" : "");
       })
+
     }
     vm.removeItem = function (index) {
       vm.found.splice(index, 1);
+      vm.error = (vm.found.length == 0 ? "Nothing found" : "");
     }
   }
 
@@ -51,7 +55,8 @@
       templateUrl : 'narrowDownList.html',
       scope : {
         items: '<',
-        onRemove : '&'
+        onRemove : '&',
+        error : '<'
       }
     }
     return ddo;
