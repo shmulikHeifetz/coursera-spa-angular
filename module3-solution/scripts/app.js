@@ -47,7 +47,7 @@
 
   function FoundItems() {
     var ddo = {
-      templateUrl : '../narrowDownList.html',
+      templateUrl : 'narrowDownList.html',
       scope : {
         items: '<',
         onRemove : '&'
