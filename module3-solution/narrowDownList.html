@@ -1,6 +1,6 @@
 <div>
   <ol>
-    <h4 ng-if="items.length == 0">Nothing found</h4>
+    <h4 ng-show="items.length == 0">Nothing found</h4>
     <li ng-repeat="item in items">
       <h4>[{{item.short_name}}]  {{item.name}}</h4>
       <div>{{item.description}}</div>

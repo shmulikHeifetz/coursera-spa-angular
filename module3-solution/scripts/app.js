@@ -33,6 +33,7 @@
         .then(function (result) {
           var foundItems = [];
           if(searchTerm !== ""){
+            searchTerm = searchTerm.toLowerCase();
             var allItems = result.data.menu_items;
             for (var i = 0; i < allItems.length; i++) {
               if (allItems[i].description.indexOf(searchTerm) !== -1) {
