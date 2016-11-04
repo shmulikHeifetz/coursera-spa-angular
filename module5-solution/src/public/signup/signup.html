@@ -60,13 +60,16 @@
             </div>
             <div class="col-sm-5">
               <input type="text" name="favoritedish" placeholder="Enter Favorite Dish" class="form-control"
-                ng-model="signupCtrl.user.favoriteDish">
+                ng-model="signupCtrl.user.favoriteDish"
+                required>
+                <span ng-if="signupForm.favoritedish.$invalid && signupForm.favoritedish.$touched">
+                  Please input your favorite dish
+                </span>
                 <span >
                   {{signupCtrl.favoriteDishMessage}}
                 </span>
             </div>
            </div>
-
           <button class="btn btn-lg btn-success"
             ng-disabled="signupForm.$invalid"
             ng-click="signupCtrl.submit()">Submit</button>
