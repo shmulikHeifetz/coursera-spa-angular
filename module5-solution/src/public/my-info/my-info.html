@@ -1,0 +1,63 @@
+<div class="container">
+  <div ng-hide="myInfoCtrl.isSet">
+      <h2 class="text-center">Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></h2>
+  </div>
+  <div ng-show="myInfoCtrl.isSet">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <div class="row">
+          <div class="col-sm-4">
+            <h2 >First name:</h2>
+          </div>
+          <div class="col-sm-6">
+            <h2 >{{myInfoCtrl.user.firstName}}</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <h2 >Last name:</h2>
+          </div>
+          <div class="col-sm-6">
+            <h2 >{{myInfoCtrl.user.lastName}}</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4">
+            <h2 >Email:</h2>
+          </div>
+          <div class="col-sm-6">
+            <h2 >{{myInfoCtrl.user.email}}</h2>
+          </div>
+        </div>
+        <div class="row" ng-if='myInfoCtrl.user.phone'>
+          <div class="col-sm-4">
+            <h2 >Phone:</h2>
+          </div>
+          <div class="col-sm-6">
+            <h2 >{{myInfoCtrl.user.phone}}</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+        <div class="row">
+          <div class="menu-item-tile col-md-6 col-sm-offset-3">
+            <h3>Your favorite dish:</h3>
+            <div class="row">
+              <div class="col-sm-5">
+                <div class="menu-item-photo">
+                  <div>{{myInfoCtrl.menuItem.short_name}}</div>
+                  <img class="img-responsive" width="250" height="150" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.menuItem.short_name}}.jpg" alt="{{myInfoCtrl.menuItem.name}}">
+                </div>
+                <div class="menu-item-price">{{myInfoCtr.lmenuItem.price_small | currency}}<span> {{myInfoCtrl.menuItem.small_portion_name}}</span> {{myInfoCtrl.menuItem.price_large | currency}} <span>{{myInfoCtrl.menuItem.large_portion_name}}</span></div>
+              </div>
+              <div class="menu-item-description col-sm-7">
+                <h3 class="menu-item-title">{{myInfoCtrl.menuItem.name}}</h3>
+                <p class="menu-item-details">{{myInfoCtrl.menuItem.description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+  </div>
+</div>
